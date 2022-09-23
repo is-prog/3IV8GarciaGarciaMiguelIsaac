@@ -11,7 +11,7 @@ class grados {
 		double ra = 0;
 		char conversion;
 		
-		
+		System.out.println("Programa de Garcia Garcia Miguel Isaac 3IV8");
 		System.out.println("Introduce la cantidad de grados Fahrenheit");
 		fa = scanner.nextDouble();
 		System.out.println("Elige un numero del 1 al 3");

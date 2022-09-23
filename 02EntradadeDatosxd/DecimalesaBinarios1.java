@@ -8,6 +8,8 @@ class DecimalesaBinarios1 {
 		int numbinario;
 		String binario = "";
 		
+		
+		 System.out.println("Programa de Garcia Garcia Miguel Isaac 3IV8");
 		 System.out.println("Ingrese el numero positivo entero que deseee convetir a binario");
                     numbinario = entrada.nextInt();
                     binario = "";

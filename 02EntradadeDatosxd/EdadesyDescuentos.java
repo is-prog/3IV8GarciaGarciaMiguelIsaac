@@ -9,7 +9,7 @@ public static void main (String[] args){
     scanner = new Scanner(System.in);
     double preciofinal = 0;
 
-
+	System.out.println("Programa de Garcia Garcia Miguel Isaac 3IV8");
     System.out.println ("Introduzca su edad");
     int edad = scanner.nextInt();
     System.out.println ("Introduzca el monto de su abono");
@@ -19,7 +19,7 @@ public static void main (String[] args){
 
     if (edad >= 65) {
         preciofinal = (abono * 0.40) + abono;
-        System.out.println("Su abono final es: " + preciofinal  + " pesos");
+        System.out.println("Su abono final con el aumento es: " + preciofinal  + " pesos");
     }
     else if(edad <21){
         System.out.println ("¿Tus padres son socios?"); 
@@ -32,12 +32,12 @@ public static void main (String[] args){
 			
 			case "Si":
 				preciofinal = (abono * 0.45 ) + abono;
-				System.out.println("Su abono final es: " + preciofinal + " pesos");
+				System.out.println("Su abono final con el aumento es: " + preciofinal + " pesos");
 			break;
 			
 			case "No":
 				preciofinal = (abono * 0.25) + abono;
-				System.out.println("Su abono final es: " + preciofinal + " pesos");
+				System.out.println("Su abono final con el aumento es: " + preciofinal + " pesos");
 			break;
 			
 			default :
