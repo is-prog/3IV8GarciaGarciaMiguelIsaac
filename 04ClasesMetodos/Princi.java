@@ -3,7 +3,6 @@ public class Princi {
 		
 		
 		CalculodeEdad men = new CalculodeEdad ();
-		men.Ingresodedatos ();
-		men.Calculodedatos ();
+		men.menu ();
 	}
 }

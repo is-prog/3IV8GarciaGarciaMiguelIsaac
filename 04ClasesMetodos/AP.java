@@ -1,131 +1,115 @@
 import java.util.Scanner;
-
+import java.util.InputMismatchException;
+import java.lang.Math;
 class AP{
 	
 	Scanner entrada = new Scanner(System.in);
 	
-	double l1 =0.0, l2 = 0.0, b =  0.0, h = 0.0, pi= 3.1416, r= 0.0, area = 0.0, peri = 0.0;
+	double b = 0.0, h = 0.0, l1 = 0.0, per=0.00, ar=0.00;
 	char op;
+	char letra;
 	
 	public void menu(){
+		do{
 		System.out.println("Bienvenido al programa de Miguel Isaac Garcia Garcia");
         System.out.println("Elige una opcion");
         System.out.println("a .- Area y perimetro de un Triangulo");
         System.out.println("b.- Area y perimetro de un Rectangulo");
         System.out.println("c.- Area y perimetro de un Cuadrado");
         System.out.println("d.- Area y perimetro de un Circulo");
+		System.out.println("e.- Salir del programa");
         op = entrada.next().charAt(0);
 
-		
+		try{
 		switch (op) {
             case 'a':
-
 					System.out.println("Ingrese la longitud de la base");
 					b = entrada.nextDouble();
 					System.out.println("Ingrese la longitud de la altura");
 					h = entrada.nextDouble();
 					System.out.println("Ingrese la longitud del lado restante");
 					l1 = entrada.nextDouble();
+					aT();
+					pT();
 					
-					area= aT(double b, h);
-					peri = pT(double l1, b, h);
-					
-					System.out.println("El area del triangulo es de : " + area + " u.");
-					System.out.println("El perimetro del triangulo es de : " + peri + " u.");
-				
                 break;
             case 'b':
 
 					System.out.println("Ingrese la longitud del lado mayor");
-					l1 = entrada.nextDouble();
+					b= entrada.nextDouble();
 					System.out.println("Ingrese la longitud del lado menor");
-					l2 = entrada.nextDouble();
-				
-					area = aR(double l1, l2);
-					peri = pR(double l1, l2);
-					
-					System.out.println("El area del rectangulo es de : " + area + " u.");
-					System.out.println("El perimetro del rectangulo es de : " + peri + " u.");
-					
-			
+					h= entrada.nextDouble();
+					aR();
+					pR();
                 break;
             case 'c':
 					System.out.println("Ingrese la longitud de un lado del cuadrado");
-					l1 = entrada.nextDouble();
-					
-					area = aC(double l1);
-					peri = pC(double l1);
-					
-					System.out.println("El area del cuadrado es de : " + area + " u.");
-					System.out.println("El perimetro del cuadrado es de : " + peri + " u.");
-				
+					b = entrada.nextDouble();
+					aC();
+					pC();
                 break;
             case 'd':
 					System.out.println("Ingrese la longitud del radio del circulo");
-					r = entrada.nextDouble();
+					b= entrada.nextDouble();
 					
-					area = aCi(double pi ,r);
-					peri = pCi(double pi, r);
-					
-					System.out.println("El area del circulo es de : " + area + " u.");
-					System.out.println("El perimetro del circulo es de : " + peri + " u.");
+					aCi();
+					pCi();
 					
                 break;
+			case 'e':
+			System.out.println("¿Desea salir del programa? Presione s si asi lo desea");
+				Scanner tecla = new Scanner(System.in);
+				letra = tecla.next().charAt(0);
+				if(letra == 's'|| letra == 'S'){
+					System.exit(0);
+				}
             default:
                 System.out.println("Gracias por estar aqui, pero hay que mimir, operacion no valida");
-				
 		}
+		}catch(InputMismatchException ex){
+					System.out.println("Por favor ingrese solamente numeros en este apartado");
+					System.exit(0);
+				}	
 		
 		
-		
+		}while(letra != 'e');	
 		
 		
 	}
-	    public aT(double a, b){
-			double c;
-			c = (a*b)/2;
-			return c;
-			
+	    public void aT(){
+			ar= (h*b)/2;
+			System.out.println("Tu area es iagual a "+ar);	
 		}
 		
-		public pT(double d1, a, b){
-			double e
-			e = a + b + d1;
-			return e;
+		public void pT(){
+			per= h + b + l1;
+			System.out.println("Tu perimetro es igual a "+per);
 		}
 		
-		public aR(double p1, p2){
-			double f;
-			f = p1*p2;
-			return f;
-			
+		public void aR(){
+			ar = b*h;
+			System.out.println("Tu area es iagual a "+ar);	
 		}
 		
-		public pR(double p1, p2){
-			double g;
-			g = (p1+p2) * 2;
-			return g;
-			
+		public void pR(){
+			per= (b+h) * 2;
+			System.out.println("Tu perimetro es igual a "+per);
 		}
-		public aC(double r1){
-			double h;
-			h = r1 * r1;
-			return h;
+		public void aC(){
+			ar =b * b;
+System.out.println("Tu area es iagual a "+ar);	
 		}
-		public pC(double r1){
-			double j;
-			j = r1*4;
-			return j;
+		public void pC(){
+			per = b*4;
+			System.out.println("Tu perimetro es igual a "+per);
 		}
 		
-		public aCi(double si ,ra){
-			double k;
-			k = si*(ra*ra);
-			return k;	
+		public void aCi(){
+			ar= Math.PI*(b*b);
+System.out.println("Tu area es iagual a "+ar);	
 		}
-		public pCi(double si, ra){
-			double m;
-			m = 2*si*ra;
-			return m;
+		public void pCi(){
+			per= 2*Math.PI*b;
+System.out.println("Tu perimetro es igual a "+per);
 		}
 }
